@@ -1,8 +1,6 @@
 {
   "name": "Shell Commands",
-  "on": [
-    "push"
-  ],
+  "on": ["push"],
   "jobs": {
     "run-shell-command": {
       "runs-on": "ubuntu-latest",
@@ -24,9 +22,7 @@
     },
     "run-windows-commands": {
       "runs-on": "windows-latest",
-      "needs": [
-        "run-shell-command"
-      ],
+      "needs": ["run-shell-command"],
       "steps": [
         {
           "name": "Directory PowerShell",
