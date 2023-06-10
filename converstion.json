@@ -1,0 +1,43 @@
+{
+  "name": "Shell Commands",
+  "on": [
+    "push"
+  ],
+  "jobs": {
+    "run-shell-command": {
+      "runs-on": "ubuntu-latest",
+      "steps": [
+        {
+          "name": "echo a string",
+          "run": "echo \"Hello World\""
+        },
+        {
+          "name": "multiline script",
+          "run": "node -v\nnpm -v\n"
+        },
+        {
+          "name": "Python Commands",
+          "run": "import platform\nprint(platform.processor())\n",
+          "shell": "python"
+        }
+      ]
+    },
+    "run-windows-commands": {
+      "runs-on": "windows-latest",
+      "needs": [
+        "run-shell-command"
+      ],
+      "steps": [
+        {
+          "name": "Directory PowerShell",
+          "run": "Get-Location"
+        },
+        {
+          "name": "Directory Bash",
+          "run": "pwd",
+          "shell": "bash"
+        }
+      ]
+    }
+  }
+}
